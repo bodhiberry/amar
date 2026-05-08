@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Publications | Amar Bahadur Timalsina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0a3d62;
+            --health-blue: #3c6382;
+            --light-blue: #f0f7ff;
+            --accent-teal: #00d2d3;
+            --text-dark: #2f3640;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-blue);
+        }
+
+        /* Header (Consistent with Home, About, Vitae) */
+        header {
+            background: var(--white);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left { flex: 1; }
+        .header-left h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        .slogan {
+            font-size: 0.9rem;
+            color: var(--health-blue);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .nav-right { flex: 1; }
+        .nav-right ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--health-blue);
+            font-weight: 600;
+        }
+
+        /* Media Grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .media-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 200px;
+            background: var(--health-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-tag {
+            color: var(--accent-teal);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline for Advocacy */
+        .timeline {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent-teal);
+            padding-left: 20px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            position: absolute;
+            left: -9px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--health-blue);
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 5px 0;
+        }
+
+        /* Footer (Consistent) */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 5% 1rem;
+            margin-top: 5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+        .footer-section h4 { margin-bottom: 1.2rem; color: var(--accent-teal); }
+        .footer-section p, .footer-section a { color: #d1d8e0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s;}
+        .social-icon:hover { background: var(--accent-teal); }
+        .copyright { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .nav-right ul { justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+            .section-header h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <h1>Amar Bahadur Timalsina</h1>
+            <p class="slogan">Restoring Dignity, Healing Hearts, and Returning Lost Smiles.</p>
+        </div>
+        <nav class="nav-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="vitae.html">Vitae</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="media.html" style="color: var(--accent-teal);">Media</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <div class="section-header">
+            <h2>Publications & Media</h2>
+            <p>Sharing the journey of redemption, healing, and hope with the world.</p>
+        </div>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <div class="card-image">Sunlit Mountains</div>
+                <div class="card-content">
+                    <span class="card-tag">Autobiography (2019)</span>
+                    <h3>Sunlit Mountains: A Story of Redemption, Healing and Hope</h3>
+                    <p>Sharing the journey from childhood poverty and social exclusion to global advocacy[cite: 31, 42, 47].</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-image" style="background: var(--primary-blue);">Returning the Lost Smiles</div>
+                <div class="card-content">
+                    <span class="card-tag">Published Work (2020)</span>
+                    <h3>Returning the Lost Smiles: One Man's Fight Against Leprosy</h3>
+                    <p>A narrative focused on the fight against stigma and the restoration of dignity[cite: 32, 47].</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="card-image" style="background: var(--accent-teal);">Professional Paper</div>
+                <div class="card-content">
+                    <span class="card-tag">Presentation (2015)</span>
+                    <h3>Inclusion Healing and Dignity</h3>
+                    <p>Presented at the TLM Global Fellowship Members Meeting in New-Delhi, India[cite: 27].</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Global Advocacy Presence</h2>
+            <p>Key moments representing the voice of those affected by Hansen's disease on the international stage.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2018</div>
+                <p class="timeline-title">UN Conference of the State Parties (CRPD)</p>
+                <p>New York, USA: Speaker on the Rights of People with Disabilities[cite: 21, 22].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <p class="timeline-title">WHO Informal Consultation</p>
+                <p>New Delhi, India: Focus on stopping discrimination and promoting inclusion[cite: 24].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2016</div>
+                <p class="timeline-title">International Symposium, Vatican City</p>
+                <p>Toward holistic care respectful of dignity for people with Hansen’s Disease[cite: 26].</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2005</div>
+                <p class="timeline-title">UN Sub-Commission on Human Rights</p>
+                <p>Geneva, Switzerland: Representing the rights and dignity of marginalized communities[cite: 29].</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Kathmandu, Nepal</p>
+                <p>Email: amar.ideaglobaladvocate@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="vitae.html">Curriculum Vitae</a>
+                <a href="papers.html">Papers</a>
+                <a href="media.html">Media</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">LN</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Amar Bahadur Timalsina. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

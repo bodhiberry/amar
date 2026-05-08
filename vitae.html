@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Amar Bahadur Timalsina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0a3d62;
+            --health-blue: #3c6382;
+            --light-blue: #f0f7ff;
+            --accent-teal: #00d2d3;
+            --text-dark: #2f3640;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-blue);
+        }
+
+        /* Header (Consistent with other pages) */
+        header {
+            background: var(--white);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-left { flex: 1; }
+        .header-left h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        .slogan {
+            font-size: 0.9rem;
+            color: var(--health-blue);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .nav-right { flex: 1; }
+        .nav-right ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Vitae Content Styling */
+        .cv-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .cv-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .cv-header {
+            text-align: center;
+            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .cv-header h2 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--accent-teal);
+            display: inline-block;
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .cv-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .cv-date {
+            font-weight: 700;
+            color: var(--health-blue);
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .cv-content {
+            display: block;
+            margin-left: 0;
+        }
+
+        ul.cv-list {
+            list-style: none;
+        }
+
+        ul.cv-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        ul.cv-list li::before {
+            content: "→";
+            color: var(--accent-teal);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer (Consistent with other pages) */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 5% 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+        .footer-section h4 { margin-bottom: 1.2rem; color: var(--accent-teal); }
+        .footer-section p, .footer-section a { color: #d1d8e0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .copyright { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .nav-right ul { justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+            .cv-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <h1>Amar Bahadur Timalsina</h1>
+            <p class="slogan">Restoring Dignity, Healing Hearts, and Returning Lost Smiles.</p>
+        </div>
+        <nav class="nav-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="vitae.html" style="color: var(--accent-teal);">Vitae</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cv-container">
+        <article class="cv-card">
+            <div class="cv-header">
+                <h2>Curriculum Vitae</h2>
+                <p>Budhanilkantha-8, Kathmandu, Nepal</p>
+            </div>
+
+            <h3 class="section-title">Professional Experience</h3>
+            <div class="cv-item">
+                <span class="cv-date">2021 – Present</span>
+                <span class="cv-content">Global Network Coordinator, <strong>IDEA International</strong> [cite: 8, 43]</span>
+            </div>
+            <div class="cv-item">
+                <span class="cv-date">2007 – Present</span>
+                <span class="cv-content">Founder Principal, <strong>Amardeep Secondary School</strong> [cite: 8, 46]</span>
+            </div>
+
+            <h3 class="section-title">International Appointments</h3>
+            <ul class="cv-list">
+                <li>Leadership Team, IDEA Representative, Global Partnership for Zero Leprosy (GPZL) (2020 – Present) [cite: 13, 44]</li>
+                <li>President for International Relations, IDEA Board of Directors (2020 – Present) [cite: 14]</li>
+                <li>Member, Advisory Panel of People Affected by Leprosy, ILEP (2016 – 2024) [cite: 12, 44]</li>
+                <li>Board Member, The Leprosy Mission International (2017 – 2021) [cite: 11, 44]</li>
+                <li>Technical Working Group on Leprosy in Children, WHO [cite: 44]</li>
+            </ul>
+
+            <h3 class="section-title">National Leadership</h3>
+            <ul class="cv-list">
+                <li>President, IDEA Nepal (2015 – 2021) [cite: 16]</li>
+                <li>Central Board Member, NPABSON (2018 – 2021) [cite: 17, 18]</li>
+                <li>Advisor, School Alliance for Academic Transformation (2013 – 2020) [cite: 17]</li>
+            </ul>
+
+            <h3 class="section-title">Selected International Representation</h3>
+            <ul class="cv-list">
+                <li>Speaker, UN Conference of the State Parties (CRPD), New York, 2018 [cite: 21, 22]</li>
+                <li>Participant, WHO Consultation on Stopping Discrimination, New Delhi, 2017 [cite: 24]</li>
+                <li>Presenter, UN Sub-Commission on Human Rights, Geneva, 2005 [cite: 29]</li>
+                <li>Symposium for Holistic Care, Vatican City, 2016 [cite: 26]</li>
+            </ul>
+
+            <h3 class="section-title">Education</h3>
+            <ul class="cv-list">
+                <li><strong>Master of Arts in English</strong> – IACER, Kathmandu [cite: 34, 42]</li>
+                <li><strong>Bachelor of Arts in English</strong> – Patan Multiple Campus, TU [cite: 35]</li>
+                <li><strong>Intermediate of Arts (English/Economics)</strong> – Patan Multiple Campus [cite: 36]</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Kathmandu, Nepal</p>
+                <p>Email: amar.ideaglobaladvocate@gmail.com [cite: 3]</p>
+                <p>Mob: +977-9841-210463 [cite: 4]</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="vitae.html">Vitae</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">LN</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Amar Bahadur Timalsina. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

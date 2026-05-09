@@ -138,31 +138,88 @@
             left: 0;
         }
 
-        /* Footer (Consistent with other pages) */
-        footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 3rem 5% 1rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 2rem;
-        }
-        .footer-section h4 { margin-bottom: 1.2rem; color: var(--accent-teal); }
-        .footer-section p, .footer-section a { color: #d1d8e0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
-        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
-        .social-icon { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .copyright { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; }
+        /* Footer Base */
+footer {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 3rem 5% 1.5rem;
+    margin-top: 4rem;
+}
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1.2rem;
+    color: var(--accent-teal);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p, .footer-section a {
+    color: #d1d8e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-teal);
+}
+
+/* Social Media Specific CSS */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: flex !important; /* Forces flex for alignment */
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white !important;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-teal);
+    color: var(--primary-blue) !important;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; }
             .nav-right ul { justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
             .cv-card { padding: 1.5rem; }
         }
     </style>
+
+    <head>
+    <!-- Add this line below your Google Fonts link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 </head>
 <body>
 
@@ -184,85 +241,92 @@
     </header>
 
     <main class="cv-container">
-        <article class="cv-card">
-            <div class="cv-header">
-                <h2>Curriculum Vitae</h2>
-                <p>Budhanilkantha-8, Kathmandu, Nepal</p>
-            </div>
+    <article class="cv-card">
+        <div class="cv-header">
+            <h2>Curriculum Vitae</h2>
+            <p>Budhanilkantha-8, Kathmandu, Nepal</p>
+        </div>
 
-            <h3 class="section-title">Professional Experience</h3>
-            <div class="cv-item">
-                <span class="cv-date">2021 – Present</span>
-                <span class="cv-content">Global Network Coordinator, <strong>IDEA International</strong> [cite: 8, 43]</span>
-            </div>
-            <div class="cv-item">
-                <span class="cv-date">2007 – Present</span>
-                <span class="cv-content">Founder Principal, <strong>Amardeep Secondary School</strong> [cite: 8, 46]</span>
-            </div>
+        <h3 class="section-title">Professional Experience</h3>
+        <div class="cv-item">
+            <span class="cv-date">2021 – Present</span>
+            <span class="cv-content">Global Network Coordinator, <strong>IDEA International</strong></span>
+        </div>
+        <div class="cv-item">
+            <span class="cv-date">2007 – Present</span>
+            <span class="cv-content">Founder Principal, <strong>Amardeep Secondary School</strong></span>
+        </div>
 
-            <h3 class="section-title">International Appointments</h3>
-            <ul class="cv-list">
-                <li>Leadership Team, IDEA Representative, Global Partnership for Zero Leprosy (GPZL) (2020 – Present) [cite: 13, 44]</li>
-                <li>President for International Relations, IDEA Board of Directors (2020 – Present) [cite: 14]</li>
-                <li>Member, Advisory Panel of People Affected by Leprosy, ILEP (2016 – 2024) [cite: 12, 44]</li>
-                <li>Board Member, The Leprosy Mission International (2017 – 2021) [cite: 11, 44]</li>
-                <li>Technical Working Group on Leprosy in Children, WHO [cite: 44]</li>
-            </ul>
+        <h3 class="section-title">International Appointments</h3>
+        <ul class="cv-list">
+            <li>Leadership Team, IDEA Representative, Global Partnership for Zero Leprosy (GPZL) (2020 – Present)</li>
+            <li>President for International Relations, IDEA Board of Directors (2020 – Present)</li>
+            <li>Member, Advisory Panel of People Affected by Leprosy, ILEP (2016 – 2024)</li>
+            <li>Board Member, The Leprosy Mission International (2017 – 2021)</li>
+            <li>Technical Working Group on Leprosy in Children, WHO</li>
+        </ul>
 
-            <h3 class="section-title">National Leadership</h3>
-            <ul class="cv-list">
-                <li>President, IDEA Nepal (2015 – 2021) [cite: 16]</li>
-                <li>Central Board Member, NPABSON (2018 – 2021) [cite: 17, 18]</li>
-                <li>Advisor, School Alliance for Academic Transformation (2013 – 2020) [cite: 17]</li>
-            </ul>
+        <h3 class="section-title">National Leadership</h3>
+        <ul class="cv-list">
+            <li>President, IDEA Nepal (2015 – 2021)</li>
+            <li>Central Board Member, NPABSON (2018 – 2021)</li>
+            <li>Advisor, School Alliance for Academic Transformation (2013 – 2020)</li>
+        </ul>
 
-            <h3 class="section-title">Selected International Representation</h3>
-            <ul class="cv-list">
-                <li>Speaker, UN Conference of the State Parties (CRPD), New York, 2018 [cite: 21, 22]</li>
-                <li>Participant, WHO Consultation on Stopping Discrimination, New Delhi, 2017 [cite: 24]</li>
-                <li>Presenter, UN Sub-Commission on Human Rights, Geneva, 2005 [cite: 29]</li>
-                <li>Symposium for Holistic Care, Vatican City, 2016 [cite: 26]</li>
-            </ul>
+        <h3 class="section-title">Selected International Representation</h3>
+        <ul class="cv-list">
+            <li>Speaker, UN Conference of the State Parties (CRPD), New York, 2018</li>
+            <li>Participant, WHO Consultation on Stopping Discrimination, New Delhi, 2017</li>
+            <li>Presenter, UN Sub-Commission on Human Rights, Geneva, 2005</li>
+            <li>Symposium for Holistic Care, Vatican City, 2016</li>
+        </ul>
 
-            <h3 class="section-title">Education</h3>
-            <ul class="cv-list">
-                <li><strong>Master of Arts in English</strong> – IACER, Kathmandu [cite: 34, 42]</li>
-                <li><strong>Bachelor of Arts in English</strong> – Patan Multiple Campus, TU [cite: 35]</li>
-                <li><strong>Intermediate of Arts (English/Economics)</strong> – Patan Multiple Campus [cite: 36]</li>
-            </ul>
-        </article>
-    </main>
+        <h3 class="section-title">Education</h3>
+        <ul class="cv-list">
+            <li><strong>Master of Arts in English</strong> – IACER, Kathmandu</li>
+            <li><strong>Bachelor of Arts in English</strong> – Patan Multiple Campus, TU</li>
+            <li><strong>Intermediate of Arts (English/Economics)</strong> – Patan Multiple Campus</li>
+        </ul>
+    </article>
+</main>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p>Kathmandu, Nepal</p>
-                <p>Email: amar.ideaglobaladvocate@gmail.com [cite: 3]</p>
-                <p>Mob: +977-9841-210463 [cite: 4]</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="vitae.html">Vitae</a>
-                <a href="contact.html">Contact</a>
-            </div>
+   <footer>
+    <div class="footer-grid">
+        <!-- Section 1 -->
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Based in Kathmandu, Nepal</p>
+            <p>Email: contact@amartimalsina.com</p>
+            <p>Founder Principal: Amardeep Secondary School</p>
+        </div>
+        
+        <!-- Section 2 -->
+             <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vitae.html">Vitae</a>
+            <a href="papers.html">Papers</a>
+            <a href="media.html">Media</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-icon">FB</a>
-                    <a href="#" class="social-icon">TW</a>
-                    <a href="#" class="social-icon">LN</a>
-                </div>
+        <!-- Section 3: Social Media (Now correctly inside the grid) -->
+        <div class="footer-section">
+            <h4>Follow the Journey</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/skhadk" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 Amar Bahadur Timalsina. All Rights Reserved.
-        </div>
-    </footer>
+    </div>
+
+    <div class="copyright">
+        &copy; 2024 Amar Bahadur Timalsina. All Rights Reserved.
+    </div>
+</footer>
 
 </body>
 </html>

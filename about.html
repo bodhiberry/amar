@@ -125,24 +125,77 @@
             left: 0;
         }
 
-        /* Footer (Same as Index) */
-        footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 3rem 5% 1rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 2rem;
-        }
-        .footer-section h4 { margin-bottom: 1.2rem; color: var(--accent-teal); }
-        .footer-section p, .footer-section a { color: #d1d8e0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
-        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
-        .social-icon { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .copyright { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; }
+       /* Footer Base */
+footer {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 3rem 5% 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1.2rem;
+    color: var(--accent-teal);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p, .footer-section a {
+    color: #d1d8e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-teal);
+}
+
+/* Social Media Specific CSS */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: flex !important; /* Forces flex for alignment */
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white !important;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-teal);
+    color: var(--primary-blue) !important;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
 
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; }
@@ -150,7 +203,12 @@
             .bio-section { padding: 1.5rem; }
         }
     </style>
+<head>
+    <!-- Add this line below your Google Fonts link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+</head>
+
 <body>
 
     <header>
@@ -195,34 +253,43 @@
     </main>
 
     <footer>
-        <div class="footer-grid">
+    <div class="footer-grid">
+        <!-- Section 1 -->
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Based in Kathmandu, Nepal</p>
+            <p>Email: contact@amartimalsina.com</p>
+            <p>Founder Principal: Amardeep Secondary School</p>
+        </div>
+        
+        <!-- Section 2 -->
             <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p>Based in Kathmandu, Nepal</p>
-                <p>Email: contact@amartimalsina.com</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">Biography</a>
-                <a href="vitae.html">Professional Vitae</a>
-                <a href="contact.html">Contact</a>
-            </div>
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vitae.html">Vitae</a>
+            <a href="papers.html">Papers</a>
+            <a href="media.html">Media</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
-            <div class="footer-section">
-                <h4>Follow</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-icon">FB</a>
-                    <a href="#" class="social-icon">TW</a>
-                    <a href="#" class="social-icon">LN</a>
-                </div>
+        <!-- Section 3: Social Media (Now correctly inside the grid) -->
+        <div class="footer-section">
+            <h4>Follow the Journey</h4>
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2024 Amar Bahadur Timalsina. All Rights Reserved.
-        </div>
-    </footer>
+    </div>
+
+    <div class="copyright">
+        &copy; 2024 Amar Bahadur Timalsina. All Rights Reserved.
+    </div>
+</footer>
+
 
 </body>
 </html>

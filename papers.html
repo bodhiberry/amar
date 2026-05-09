@@ -140,23 +140,77 @@
         }
 
         /* Footer (Consistent) */
-        footer {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 3rem 5% 1rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 2rem;
-        }
-        .footer-section h4 { margin-bottom: 1.2rem; color: var(--accent-teal); }
-        .footer-section p, .footer-section a { color: #d1d8e0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
-        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
-        .social-icon { width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-        .copyright { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.7; }
+        /* Footer Base */
+footer {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 3rem 5% 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1.2rem;
+    color: var(--accent-teal);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p, .footer-section a {
+    color: #d1d8e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-teal);
+}
+
+/* Social Media Specific CSS */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: flex !important; /* Forces flex for alignment */
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white !important;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-teal);
+    color: var(--primary-blue) !important;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
 
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; }
@@ -164,7 +218,11 @@
             .paper-card { padding: 1.5rem; }
         }
     </style>
+
+    <!-- Add this line below your Google Fonts link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <header>
@@ -184,72 +242,80 @@
         </nav>
     </header>
 
-    <main class="content-container">
-        <div class="paper-card">
-            <h2>Published Books</h2>
-            
-            <div class="publication-item">
-                <span class="pub-meta">Autobiography | 2019 [cite: 31]</span>
-                <span class="pub-title">Sunlit Mountains: A Story of Redemption, Healing and Hope [cite: 31]</span>
-                <p class="pub-desc">An insightful narrative detailing the journey of overcoming leprosy-related stigma and the path toward restoration and global leadership[cite: 42, 47].</p>
-            </div>
-
-            <div class="publication-item">
-                <span class="pub-meta">Biography | 2020 [cite: 32]</span>
-                <span class="pub-title">Returning the Lost Smiles: One Man's Fight Against Leprosy [cite: 32]</span>
-                <p class="pub-desc">A powerful account of advocacy and the tireless effort to restore dignity to those affected by Hansen's disease[cite: 32, 48].</p>
-            </div>
-
-            <h2>Conference Papers & Presentations</h2>
-            <ul class="presentation-list">
-                <li>
-                    <strong>"Inclusion Healing and Dignity" [cite: 27]</strong><br>
-                    Presented at the TLM Global Fellowship Members Meeting, New-Delhi, India, 2015[cite: 27].
-                </li>
-                <li>
-                    <strong>UN Conference of the State Parties to the Convention on the Rights of People with Disabilities [cite: 21]</strong><br>
-                    Featured Speaker, New York, NY, USA, 2018[cite: 22].
-                </li>
-                <li>
-                    <strong>UN Sub-Commission on Human Rights [cite: 29]</strong><br>
-                    Presenter on global human rights issues and leprosy, Geneva, Switzerland, 2005[cite: 29].
-                </li>
-            </ul>
-
-            <h2>Academic Research Focus</h2>
-            <p>With a <strong>Master of Arts in English Literature</strong> from IACER, Amar combines his academic background with lived experience to influence global health policy and dismantle discriminatory laws[cite: 34, 45, 49].</p>
+<main class="content-container">
+    <div class="paper-card">
+        <h2>Published Books</h2>
+        
+        <div class="publication-item">
+            <span class="pub-meta">Autobiography | 2019</span>
+            <span class="pub-title">Sunlit Mountains: A Story of Redemption, Healing and Hope</span>
+            <p class="pub-desc">An insightful narrative detailing the journey of overcoming leprosy-related stigma and the path toward restoration and global leadership.</p>
         </div>
-    </main>
+
+        <div class="publication-item">
+            <span class="pub-meta">Biography | 2020</span>
+            <span class="pub-title">Returning the Lost Smiles: One Man's Fight Against Leprosy</span>
+            <p class="pub-desc">A powerful account of advocacy and the tireless effort to restore dignity to those affected by Hansen's disease.</p>
+        </div>
+
+        <h2>Conference Papers & Presentations</h2>
+        <ul class="presentation-list">
+            <li>
+                <strong>"Inclusion Healing and Dignity"</strong><br>
+                Presented at the TLM Global Fellowship Members Meeting, New-Delhi, India, 2015.
+            </li>
+            <li>
+                <strong>UN Conference of the State Parties to the Convention on the Rights of People with Disabilities</strong><br>
+                Featured Speaker, New York, NY, USA, 2018.
+            </li>
+            <li>
+                <strong>UN Sub-Commission on Human Rights</strong><br>
+                Presenter on global human rights issues and leprosy, Geneva, Switzerland, 2005.
+            </li>
+        </ul>
+
+        <h2>Academic Research Focus</h2>
+        <p>With a <strong>Master of Arts in English Literature</strong> from IACER, Amar combines his academic background with lived experience to influence global health policy and dismantle discriminatory laws.</p>
+    </div>
+</main>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>Contact Info</h4>
-                <p>Kathmandu, Nepal [cite: 3]</p>
-                <p>Email: amar.ideaglobaladvocate@gmail.com [cite: 3]</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="vitae.html">Vitae</a>
-                <a href="media.html">Media</a>
-            </div>
+    <div class="footer-grid">
+        <!-- Section 1 -->
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>Based in Kathmandu, Nepal</p>
+            <p>Email: contact@amartimalsina.com</p>
+            <p>Founder Principal: Amardeep Secondary School</p>
+        </div>
+        
+        <!-- Section 2 -->
+             <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vitae.html">Vitae</a>
+            <a href="papers.html">Papers</a>
+            <a href="media.html">Media</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
-            <div class="footer-section">
-                <h4>Follow the Journey</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-icon">FB</a>
-                    <a href="#" class="social-icon">TW</a>
-                    <a href="#" class="social-icon">LN</a>
-                </div>
+        <!-- Section 3: Social Media (Now correctly inside the grid) -->
+        <div class="footer-section">
+            <h4>Follow the Journey</h4>
+            <div class="social-links">
+                <a href="https://www.facebook.com/skhadk" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 Amar Bahadur Timalsina. All Rights Reserved.
-        </div>
-    </footer>
+    </div>
+
+    <div class="copyright">
+        &copy; 2024 Amar Bahadur Timalsina. All Rights Reserved.
+    </div>
+</footer>
 
 </body>
 </html>
